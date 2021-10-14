@@ -1,4 +1,4 @@
-import { push, LCA, print } from "./LCA.mjs";
+import { push, LCA } from "./LCA.mjs";
 // Lowest Common Ancestor
 
 // LCA finds the node that is the LCA of 2 nodes.

@@ -18,7 +18,6 @@ func pop(index *int) {
 }
 
 func add(root *node, val int) *node {
-
 	if root == nil {
 		return &node{nil, nil, val}
 	}
@@ -58,8 +57,6 @@ func LCA(root *node, v int, w int) int {
 	if !findPath(root, v, arr0[0:100], &index0) || !findPath(root, w, arr1[0:100], &index1) {
 		return -1
 	}
-	fmt.Println(arr0[0:index0])
-	fmt.Println(arr1[0:index1])
 	for i := 0; i < index0 && i < index1; i++ {
 		if arr0[i] != arr1[i] {
 			return arr0[i-1]
@@ -67,6 +64,7 @@ func LCA(root *node, v int, w int) int {
 	}
 	return -1
 }
+
 func _print(root *node) string {
   left := ""
   if root.left != nil {
@@ -79,17 +77,3 @@ func _print(root *node) string {
   return fmt.Sprint("(", left, ")", root.val, "(", right, ")")
 }
 
-func doSomething(array []int){
-  for i := 0; i < 10; i++ {
-    array[i] = 42
-  }
-}
-func main() {
-	var root *node = nil
-	for i := 0; i < 8; i++ {
-		root = add(root, i)
-	}
-	root = add(root, -2)
-  fmt.Println(_print(root))
-	fmt.Println(LCA(root, 1, -2))
-}
